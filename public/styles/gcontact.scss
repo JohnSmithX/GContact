@@ -1,0 +1,311 @@
+$fontFamily: "Microsoft YaHei", SimHei;
+
+* {
+  font-size: 14px;
+}
+
+body {
+  margin-top: 51px;
+  background-color: #eee;
+  font-family: $fontFamily;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 960px;
+  margin: 0 auto;
+
+}
+
+.chatroom-control {
+  &:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+  }
+  display: block;
+  a {
+    float: right;
+    margin: 25px auto;
+  }
+}
+
+//聊天房间列表 样式
+.chatroom-list {
+  .chatroom {
+    display: block;
+    float: left;
+    border: 1px solid #c9c9c9;
+    max-width: 100%;
+    height: auto;
+    .chatroom-link {
+      > img {
+        background-color: #31b0d5;
+        max-width: 100%;
+      }
+    }
+    .chatroom-false {
+      > img {
+        background-color: transparent;
+        position: absolute;
+        right: 15px;
+      }
+    }
+    &:hover {
+      border-color: #31b0d5;
+    }
+    .chatroom-tag {
+      margin: 5px 0 0 0;
+      padding: 3px 7px;
+      .chatroom-des {
+        float: left;
+        max-width: 70%;
+        .chatroom-name {
+          p {
+            font-size: 16px;
+            color: #222222;
+          }
+          .master {
+            display: block;
+          }
+        }
+        .chatroom-d {
+          p {
+            font-size: 10px;
+            color: #818181;
+          }
+
+        }
+      }
+
+      .online {
+        float: right;
+        p {
+          font-size: 14px;
+          color: #31b0d5;
+        }
+        .badge {
+          background-color: #31b0d5;
+        }
+        img {
+          width: 35px;
+          height: 40px;
+        }
+      }
+      img {
+        float: none;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+}
+
+//按钮样式重构
+.btn {
+  position: relative;
+  padding: 8px 30px;
+  border: 0;
+  margin: 10px 1px;
+  cursor: pointer;
+  border-radius: 0px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.84);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none !important;
+  &:hover:not(.btn-link):not(.btn-flat) {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.28);
+  }
+  &:active:not(.btn-link):not(.btn-flat) {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+  &.btn-raised {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &.btn-raised:active:not(.btn-link) {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+
+.btn-success:not(.btn-link):not(.btn-flat) {
+  background-color: #0f9d58;
+}
+
+.btn-primary:not(.btn-link):not(.btn-flat) {
+  background-color: #4285f4;
+}
+
+//登入窗口样式
+.login-form {
+
+  max-width: 34.375%;
+  padding: 15px;
+  margin: 0 auto;
+  .form-signin {
+    .form-signin-heading {
+      width: 280px;
+      margin-bottom: 10px;
+      float: right;
+    }
+    .checkbox {
+      @extend .form-signin-heading;
+      font-weight: normal;
+    }
+
+    .form-control {
+      position: relative;
+      height: auto;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 0px;
+    }
+    .form-control:focus {
+      z-index: 2;
+    }
+
+    input[type="email"] {
+      margin-bottom: -1px;
+    }
+
+    input[type="password"] {
+      margin: 2px 0 10px;
+    }
+  }
+}
+
+.new-chatRoom {
+  position: relative;
+  top: 50px;
+  max-width: 60%;
+  padding: 15px;
+  margin: 0 auto;
+  .from-chatroom {
+    .form-label {
+      font-size: 16px;
+      margin: 5px 0 10px 0;
+    }
+    .form-control {
+      position: relative;
+      height: auto;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 0px;
+    }
+    .form-control:focus {
+      z-index: 2;
+    }
+
+    .form-button {
+      margin-top: 10px;
+      float: right;
+    }
+  }
+
+}
+
+.alert {
+  border-radius: 0px !important;
+}
+
+//输入样式
+/* Input */
+.chat-page {
+
+  max-width: 75%;
+  position: relative;
+  top: 25px;
+  * {
+    font-size: 16px;
+  }
+  margin: 0 auto;
+  .inputArea {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 30px;
+    background-color: white;
+    height: 100px;
+    text-align: center;
+    .inputMessage {
+      font-size: 100%;
+      border: 10px solid #428bca;
+      bottom: 0;
+      height: 60px;
+      left: 0;
+      outline: none;
+      padding-left: 10px;
+      right: 0;
+      width: 700px;
+    }
+  }
+  ul {
+    list-style: none;
+    word-wrap: break-word;
+  }
+
+  /* Pages */
+
+  .pages {
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    float: left;
+    background-color: #f8f8f8;
+    .page {
+      height: 100%;
+      //            position: absolute;
+      width: 100%;
+      .chatArea {
+        height: 100%;
+        .messages {
+          font-size: 150%;
+          height: 100%;
+          margin: 0;
+          overflow-y: scroll;
+          padding: 10px 20px 10px 20px;
+        }
+
+      }
+    }
+  }
+  .message.typing .messageBody {
+    color: gray;
+  }
+
+  .username {
+    /*float: left;*/
+    font-weight: 700;
+    overflow: hidden;
+    padding-right: 15px;
+    text-align: right;
+  }
+
+}
+
+.user-list {
+  width: 180px;
+  float: left;
+  position: relative;
+  left: 80px;
+  top: 25px;
+  background-color: #f8f8f8;
+  text-align: center;
+
+  ul {
+
+    list-style: none;
+    padding: 10px 0 0 0;
+
+    li {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+  }
+}
+

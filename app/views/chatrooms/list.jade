@@ -1,0 +1,37 @@
+extends ../layout
+
+block main
+    .chatroom-control
+        a(href='/chatrooms/new').btn.btn-success.btn-raised 创建
+
+    - if (errors)
+    - each error in errors
+    .alert.alert-dismissable.alert-danger
+= error[1]
+    .row.chatroom-list
+        - if (chatRooms)
+        - chatRooms.forEach(function (chatRoom) {
+        .col-xs-3
+            .chatroom
+                a.chatroom-link(href='/chatrooms/#{chatRoom.id}')
+                    img(src='/images/chat.png')
+                - if (chatRoom.owner.id == user.id)
+                a.chatroom-false(href='/chatrooms/#{chatRoom.id}/delete')
+                    img(src='/images/false.png')
+                .chatroom-tag
+                    .chatroom-des
+                        .chatroom-name
+                            p= chatRoom.name
+                            span.master by: &nbsp;
+                                a(href='/users/#{chatRoom.creator}')= chatRoom.owner.true_name
+                        .chatroom-d
+                            p= chatRoom.describe
+                    .online
+                        p 在线 &nbsp;
+                            span.badge= chatRoom.numOfMembers
+                        - if (chatRoom.password)
+                        img(src='/images/lock.png')
+        - });
+
+block append js
+    script(src='/scripts/gcontact.js')

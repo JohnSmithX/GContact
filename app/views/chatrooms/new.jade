@@ -1,0 +1,18 @@
+extends ../layout
+
+block main
+    .new-chatroom
+        form.from-chatroom(role='form' action='/chatrooms' method='post')
+            - if (errors)
+            - each error in errors
+            .alert.alert-dismissable.alert-danger
+        = error[1]
+            label.form-label 房间名称
+            input.form-control#name(name='name' type='text' placeholder='房间名称' autofocus)
+            label.form-label 房间描述
+            input.form-control#describe(name='describe' type='text' placeholder='房间描述')
+            label.form-label 房间密码
+            input.form-control#crpassword(name='crpassword' type='password' placeholder='房间密码')
+            .form-button
+                button.btn.btn-lg.btn-primary.btn-raised(type='submit') 创建
+

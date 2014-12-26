@@ -1,0 +1,25 @@
+{
+    "name": "application-name",
+    "version": "0.0.1",
+    "dependencies": {
+        "jugglingdb-postgres": "latest",
+        "passport": "latest",
+        "debug": "latest",
+        "less": "latest",
+        "markdown-js": "latest",
+        "body-parser": "^1.5.2",
+        "errorhandler": "^1.1.1",
+        "express": "^4.8.0",
+        "express-session": "^1.7.2",
+        "method-override": "^2.1.2",
+        "morgan": "^1.2.2",
+        "multer": "^0.1.3",
+        "serve-favicon": "^2.0.1",
+        "jugglingdb": "latest",
+        "socket.io": ">=1.1.0",
+        "jugglingdb-mysql": ">=0.0.8",
+        "connect": ">=3.2.0",
+        "jade": ">=1.6.0",
+        "lodash": "latest"
+    }
+}
